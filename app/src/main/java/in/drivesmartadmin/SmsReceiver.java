@@ -32,7 +32,7 @@ public class SmsReceiver extends BroadcastReceiver {
                 String sendTime = String.valueOf(message.getTimestampMillis());
 
                 Log.d(TAG,""+sender+" "+messageBody);
-
+                dbHelper = new DbHelper(context);
                 dbHelper.addEntryToDb(sender,messageBody,sendTime);
                 //TODO:  send these details to server ...wait server is not ready yet
             }

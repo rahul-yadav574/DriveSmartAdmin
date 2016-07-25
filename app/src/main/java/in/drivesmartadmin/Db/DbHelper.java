@@ -46,7 +46,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public List<Message> retrieveListFromDb(){
 
         SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {Schema.DbEntry.COLUMN_SENDER_NUMBER, Schema.DbEntry.COLUMN_SENDER_MESSAGE};
+        String[] projection = {Schema.DbEntry.COLUMN_SENDER_NUMBER, Schema.DbEntry.COLUMN_SENDER_MESSAGE,Schema.DbEntry.COLUMN_SENDER_MESSAGE_TIME};
 
         Cursor readCursor = db.query(Schema.DbEntry.TABLE_NAME,
                 projection,null,null,null,null,null);
