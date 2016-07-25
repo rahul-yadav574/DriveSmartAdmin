@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Drive Smart Admin</string>
+    <string name="empty_list_view_text">There are no messages yet. we are listening continuously.</string>
 </resources>
