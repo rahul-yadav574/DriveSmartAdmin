@@ -1,4 +1,4 @@
-package in.drivesmartadmin;
+package in.drivesmartadmin.Receiver;
 
 import android.annotation.TargetApi;
 import android.content.BroadcastReceiver;
