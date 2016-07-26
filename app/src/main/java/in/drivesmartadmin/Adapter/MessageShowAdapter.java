@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
