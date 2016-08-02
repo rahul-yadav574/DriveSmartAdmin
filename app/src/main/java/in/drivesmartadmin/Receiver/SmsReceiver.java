@@ -10,6 +10,7 @@ import android.telephony.SmsMessage;
 import android.util.Log;
 
 import in.drivesmartadmin.Db.DbHelper;
+import in.drivesmartadmin.Service.ServerRequest;
 
 /**
  * Created by Brekkishhh on 24-07-2016.
@@ -34,7 +35,17 @@ public class SmsReceiver extends BroadcastReceiver {
                 Log.d(TAG,""+sender+" "+messageBody);
                 dbHelper = new DbHelper(context);
                 dbHelper.addEntryToDb(sender,messageBody,sendTime);
-                //TODO:  send these details to server ...wait server is not ready yet
+
+                Bundle bundle = new Bundle();
+
+                bundle.putString("phone",sender);
+                bundle.putString("latitude","");
+                bundle.putString("longitude","");
+                bundle.putString("timeStamp","23-12-2015");
+
+                Intent startServerRequest = new Intent(context, ServerRequest.class);
+                startServerRequest.putExtras(bundle);
+                context.startService(startServerRequest);
             }
         }
 
