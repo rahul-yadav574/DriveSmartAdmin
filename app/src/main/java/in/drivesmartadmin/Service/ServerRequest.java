@@ -35,21 +35,21 @@ public class ServerRequest extends IntentService {
         String lng = bundle.getString("longitude");
         String timeStamp = bundle.getString("timeStamp");
 
+        Log.d(TAG,"lat is  : "+lat);
+        Log.d(TAG,"lat is  : "+lng);
+
+
         OkHttpClient okHttpClient = new OkHttpClient();
 
-        /*RequestBody requestBody = new FormEncodingBuilder()
-                .add("phone",phoneNumber)
-                .add("latitude",lat)
-                .add("longitude",lng)
-                .add("timeStamp",timeStamp)
-                .build();*/
 
-        /*https://drivesmart.herokuapp.com/sendmessage/?phoneNumber=9050567809&lat=28.608635&lng=77.1088709*/
         Request request = new Request.Builder()
                 .url("https://drivesmart.herokuapp.com/sendmessage/?phoneNumber="+phoneNumber+"&lat="+lat+"&lng="+lng)          //Here Goes The Url Once it is ready
                 .get()
                 .build();
 
+
+
+        Log.d(TAG,"https://drivesmart.herokuapp.com/sendmessage/?phoneNumber="+phoneNumber+"&lat="+lat+"&lng="+lng);
 
 
         okHttpClient.newCall(request).enqueue(new Callback() {
